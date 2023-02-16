@@ -79,7 +79,7 @@ class Block_Controller(object):
         nextMove["strategy"]["y_operation"] = strategy[2]
         nextMove["strategy"]["y_moveblocknum"] = strategy[3]
         print(nextMove)
-        print("###### SAMPLE CODE ######")
+        print("###### SAMPLE CODE NISHIDA ######")
         return nextMove
 
     def getSearchXRange(self, Shape_class, direction):
