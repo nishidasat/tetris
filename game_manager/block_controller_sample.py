@@ -28,7 +28,7 @@ class Block_Controller(object):
 
         # print GameStatus
         print("==== GameStatus block_info currentShape index ====")
-        print GameStatus["block_info"]["currentShape"]["index"]
+        # print GameStatus["block_info"]["currentShape"]["index"]
         print("=================================================>")
         pprint.pprint(GameStatus, width = 61, compact = True)
 
