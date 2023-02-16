@@ -14,6 +14,8 @@ class Block_Controller(object):
     ShapeNone_index = 0
     CurrentShape_class = 0
     NextShape_class = 0
+    
+    CurrentShape_index = 0 #NISHIDA
 
     # GetNextMove is main function.
     # input
@@ -35,6 +37,11 @@ class Block_Controller(object):
         # get data from GameStatus
         # current shape info
         CurrentShapeDirectionRange = GameStatus["block_info"]["currentShape"]["direction_range"]
+        
+        CurrentShape_index = GameStatus["block_info"]["currentShape"]["index"] #NISHIDA       
+        print "currentShape_index = " #NISHIDA 
+        print currentShape_index #NISHIDA 
+        
         self.CurrentShape_class = GameStatus["block_info"]["currentShape"]["class"]
         # next shape info
         NextShapeDirectionRange = GameStatus["block_info"]["nextShape"]["direction_range"]
