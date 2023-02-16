@@ -39,8 +39,8 @@ class Block_Controller(object):
         CurrentShapeDirectionRange = GameStatus["block_info"]["currentShape"]["direction_range"]
         
         CurrentShape_index = GameStatus["block_info"]["currentShape"]["index"] # NISHIDA       
-        print "currentShape_index = "
-        print currentShape_index 
+        print("currentShape_index = ")
+        print(currentShape_index) 
         
         self.CurrentShape_class = GameStatus["block_info"]["currentShape"]["class"]
         # next shape info
