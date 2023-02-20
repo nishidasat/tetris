@@ -88,11 +88,11 @@ class Block_Controller(object):
         nextMove["strategy"]["y_operation"] = strategy[2]
         nextMove["strategy"]["y_moveblocknum"] = strategy[3]
         
-        if CurrentShape_index == 1:
-            nextMove["strategy"]["direction"] = 0
-            nextMove["strategy"]["x"] = -5
-            nextMove["strategy"]["y_operation"] = 1
-            nextMove["strategy"]["y_moveblocknum"] = 1        
+      #  if CurrentShape_index == 1:
+      #      nextMove["strategy"]["direction"] = 0
+      #      nextMove["strategy"]["x"] = -5
+      #      nextMove["strategy"]["y_operation"] = 1
+      #      nextMove["strategy"]["y_moveblocknum"] = 1        
         
         print(nextMove)
         print("###### SAMPLE CODE SATOMI.NISHIDA ######")
@@ -237,8 +237,8 @@ class Block_Controller(object):
 
         # calc Evaluation Value
         score = 0
-        score = score + fullLines * 10.0           # try to delete line 
-        score = score - nHoles * 1.0               # try not to make hole
+        score = score + fullLines * 5.0           # try to delete line 
+        score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
         #score = score - maxDy * 0.3                # maxDy
