@@ -15,7 +15,7 @@ class Block_Controller(object):
     CurrentShape_class = 0
     NextShape_class = 0
     
-    CurrentShape_index = 0 # NISHIDA
+    CurrentShape_index = 0
 
     # GetNextMove is main function.
     # input
@@ -29,8 +29,8 @@ class Block_Controller(object):
         t1 = datetime.now()
 
         # print GameStatus
-        print("==== GameStatus block_info currentShape index ====")
-        # print GameStatus["block_info"]["currentShape"]["index"]
+        print("==== 2/20 GameStatus block_info currentShape index ====")
+        print(GameStatus["block_info"]["currentShape"]["index"])
         print("=================================================>")
         pprint.pprint(GameStatus, width = 61, compact = True)
 
