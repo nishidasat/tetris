@@ -87,6 +87,13 @@ class Block_Controller(object):
         nextMove["strategy"]["x"] = strategy[1]
         nextMove["strategy"]["y_operation"] = strategy[2]
         nextMove["strategy"]["y_moveblocknum"] = strategy[3]
+        
+        if CurrentShape_index == 1:
+            nextMove["strategy"]["direction"] = 0
+            nextMove["strategy"]["x"] = -5
+            nextMove["strategy"]["y_operation"] = 1
+            nextMove["strategy"]["y_moveblocknum"] = 1        
+        
         print(nextMove)
         print("###### SAMPLE CODE SATOMI.NISHIDA ######")
         return nextMove
@@ -159,6 +166,7 @@ class Block_Controller(object):
         ## number of holes or blocks in the line.
         nHoles, nIsolatedBlocks = 0, 0
         ## absolute differencial value of MaxY
+        
         absDy = 0
         ## how blocks are accumlated
         BlockMaxY = [0] * width
