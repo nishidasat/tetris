@@ -250,7 +250,7 @@ class Block_Controller(object):
         else:
             score = score + fullLines * 1.0           # try to delete line
 
-        if fullLines == 1:
+        if fullLines < 3:
             score = score - fullLines * 10.0           # try to delete line 
         
         score = score - nHoles * 10.0               # try not to make hole
