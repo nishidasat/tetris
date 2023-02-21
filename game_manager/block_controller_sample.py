@@ -242,7 +242,10 @@ class Block_Controller(object):
 
         # calc Evaluation Value
         score = 0
-        score = score + fullLines * 5.0           # try to delete line 
+        if fullLines > 2:
+            score = score + fullLines * 30.0           # try to delete line 
+        else:
+            score = score + fullLines * 1.0           # try to delete line 
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
