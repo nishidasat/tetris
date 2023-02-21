@@ -162,7 +162,7 @@ class Block_Controller(object):
         #
         # sample function of evaluate board.
         #
-        if CurrentShape_index = 1
+        if CurrentShape_index = 1:
             width = self.board_data_width
         else:
             width = self.board_data_width - 1
