@@ -42,6 +42,11 @@ class Block_Controller(object):
         print("CurrentShape_index = ")
         print(CurrentShape_index) 
         
+        nextShape_index = GameStatus["block_info"]["nextShape"]["index"]
+        print("nextShape_index = ")
+        print(nextShape_index) 
+
+        
         self.CurrentShape_class = GameStatus["block_info"]["currentShape"]["class"]
         # next shape info
         NextShapeDirectionRange = GameStatus["block_info"]["nextShape"]["direction_range"]
