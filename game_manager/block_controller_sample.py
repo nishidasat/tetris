@@ -242,8 +242,8 @@ class Block_Controller(object):
 
         # calc Evaluation Value
         score = 0
-        if fullLines > 2:
-            score = score + fullLines * 30.0           # try to delete line 
+        if fullLines > 1:
+            score = score + fullLines * 10.0           # try to delete line 
         else:
             score = score + fullLines * 1.0           # try to delete line 
         score = score - nHoles * 10.0               # try not to make hole
