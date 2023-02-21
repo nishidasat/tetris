@@ -247,12 +247,12 @@ class Block_Controller(object):
         else:
             score = score + fullLines * 1.0           # try to delete line 
         score = score - nHoles * 10.0               # try not to make hole
-        score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
-        score = score - absDy * 1.0                # try to put block smoothly
-        #score = score - maxDy * 0.3                # maxDy
-        #score = score - maxHeight * 5              # maxHeight
-        #score = score - stdY * 1.0                 # statistical data
-        #score = score - stdDY * 0.01               # statistical data
+        score = score - nIsolatedBlocks * 10.0      # try not to make isolated block
+        score = score - absDy * 0                # try to put block smoothly
+        #score = score - maxDy * 0                # maxDy
+        #score = score - maxHeight * 0              # maxHeight
+        #score = score - stdY * 0                 # statistical data
+        #score = score - stdDY * 0               # statistical data
 
         # print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY)
         return score
