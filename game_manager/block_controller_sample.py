@@ -165,7 +165,7 @@ class Block_Controller(object):
         if CurrentShape_index == 1:
             width = self.board_data_width
         else:
-            width = self.board_data_width - 2
+            width = self.board_data_width - 1
         height = self.board_data_height
 
         # evaluation paramters
