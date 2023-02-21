@@ -246,7 +246,7 @@ class Block_Controller(object):
         # calc Evaluation Value
         score = 0
         if CurrentShape_index == 1:
-            score = score + fullLines * 10.0           # try to delete line
+            score = score + fullLines * 1.0           # try to delete line
         else:
             score = score + fullLines * 1.0           # try to delete line
 
