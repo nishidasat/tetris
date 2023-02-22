@@ -265,13 +265,13 @@ class Block_Controller(object):
 
         if CurrentShape_index >= 4:
             if fullLines == 2:
-                score = score - fullLines * 5.0           # try to delete line
+                score = score + fullLines * 1.0           # try to delete line
             if fullLines == 1:
-                score = score - fullLines * 10.0           # try to delete line
+                score = score + fullLines * 1.0           # try to delete line
         
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
-        score = score - absDy * 1.5                # try to put block smoothly
+        score = score - absDy * 1.0                # try to put block smoothly
         
         #score = score - maxDy * 0.3                # maxDy
         #score = score - maxHeight * 5              # maxHeight
