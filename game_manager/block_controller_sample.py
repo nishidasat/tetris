@@ -251,9 +251,9 @@ class Block_Controller(object):
             score = score + fullLines * 1.0           # try to delete line
 
         if fullLines == 1:
-            score = score - fullLines * 20.0           # try to delete line 
+            score = score - fullLines * 10.0           # try to delete line 
         if fullLines == 2:
-            score = score - fullLines * 2.0           # try to delete line 
+            score = score - fullLines * 1.0           # try to delete line 
         
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
