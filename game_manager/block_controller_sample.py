@@ -245,7 +245,7 @@ class Block_Controller(object):
 
        # calc Evaluation Value
         score = 0
-        if board[15 * self.board_data_width + 5] == 0:
+        if (board[17 * self.board_data_width + 2] == 0) and (board[17 * self.board_data_width + 3] == 0) :
             if CurrentShape_index == 1:
                 if fullLines == 4:
                     score = score + fullLines * 10.0           # try to delete line
@@ -278,7 +278,7 @@ class Block_Controller(object):
 
         else:
             score = score + fullLines * 10.0
-            score = score - nHoles * 1.0               # try not to make hole
+            score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
             score = score - absDy * 1.0                # try to put block smoothly
         
