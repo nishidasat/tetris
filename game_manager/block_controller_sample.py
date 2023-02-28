@@ -39,8 +39,8 @@ class Block_Controller(object):
         CurrentShapeDirectionRange = GameStatus["block_info"]["currentShape"]["direction_range"]
         
         CurrentShape_index = GameStatus["block_info"]["currentShape"]["index"] # NISHIDA       
-        print("CurrentShape_index = ")
-        print(CurrentShape_index) 
+        # print("CurrentShape_index = ")
+        # print(CurrentShape_index) 
         
         nextShape_index = GameStatus["block_info"]["nextShape"]["index"]
         print("nextShape_index = ")
@@ -282,8 +282,8 @@ class Block_Controller(object):
             score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
             score = score - absDy * 1.0                # try to put block smoothly
         
-        print("board[15 * self.board_data_width + 5 = ")
-        print(board[15 * self.board_data_width + 5]) 
+        #print("board[15 * self.board_data_width + 5 = ")
+        #print(board[15 * self.board_data_width + 5]) 
         
         #score = score - maxDy * 0.3                # maxDy
         #score = score - maxHeight * 5              # maxHeight
