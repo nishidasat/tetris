@@ -275,8 +275,12 @@ class Block_Controller(object):
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
 
-
-
+        if board[15 * self.board_data_width + 5] != 0:
+            score = score + fullLines * 10.0
+            score = score - nHoles * 1.0               # try not to make hole
+        
+        print("board[15 * self.board_data_width + 5 = ")
+        print(board[15 * self.board_data_width + 5]) 
         
         #score = score - maxDy * 0.3                # maxDy
         #score = score - maxHeight * 5              # maxHeight
