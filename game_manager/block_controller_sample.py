@@ -252,7 +252,8 @@ class Block_Controller(object):
                 break
         
         if yabai == 0:
-            if (CurrentShape_index >= 1) and (CurrentShape_index <= 3):
+            #if (CurrentShape_index >= 1) and (CurrentShape_index <= 3):
+            if (CurrentShape_index >= 1) and (CurrentShape_index <= 1):
                 score = score + fullLines * 10.0           # try to delete line
             else:
                 score = score + fullLines * 1.0           # try to delete line
