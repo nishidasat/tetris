@@ -246,7 +246,7 @@ class Block_Controller(object):
        # calc Evaluation Value
         score = 0
         yabai = 0
-        for xx in range(2,8,+1)
+        for xx in range(2, 8, +1):
              if board[15 * self.board_data_width + xx] != 0:
                 yabai = 1
                 break
