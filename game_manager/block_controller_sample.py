@@ -243,7 +243,7 @@ class Block_Controller(object):
         #    stdDY = math.sqrt(sum([y ** 2 for y in BlockMaxDy]) / len(BlockMaxDy) - (sum(BlockMaxDy) / len(BlockMaxDy)) ** 2)
 
 
-       # calc Evaluation Value
+       # calc Evaluation Value *******************************************
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
@@ -260,16 +260,15 @@ class Block_Controller(object):
 
         if emergency == 0:   # NOT EMERGENCY
             if fullLines == 1:
-                score = score - fullLines * 20.0           # try to delete line 
+                score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
-                score = score - fullLines * 10.0           # try to delete line
+                score = score - fullLines * 20.0           # try to delete line
         #else:    # EMERGENCY
             #score = score - absDy * 10.0                # try to put block smoothly
         
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
-
 
         #******************************************************************************** 
         
