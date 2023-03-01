@@ -274,7 +274,7 @@ class Block_Controller(object):
         #score = score - stdDY * 0.01               # statistical data
 
         print("score fullLines nHoles nIsolatedBlocks maxHeight stdY stdDY absDy BlockMaxY")
-        print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY)
+        print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, absDy, BlockMaxY)
         return score
 
 
