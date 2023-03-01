@@ -253,13 +253,15 @@ class Block_Controller(object):
                 print('///////emergency: %d' % emergency) 
                 break
         
-        if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):
+        if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
-        else:
+        elif (CurrentShape_index >= 4) and (emergency == 0):
+            score = score + fullLines * 1.0           # try to delete line
+        else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
        
         score = score - nHoles * 10.0               # try not to make hole
