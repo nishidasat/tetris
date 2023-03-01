@@ -260,7 +260,7 @@ class Block_Controller(object):
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
         else:
-            score = score + fullLines * 1.0           # try to delete line
+            score = score + fullLines * 10.0           # try to delete line
        
         score = score - nHoles * 8.0               # try not to make hole
         score = score - nIsolatedBlocks * 5.0      # try not to make isolated block
