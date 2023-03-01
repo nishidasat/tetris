@@ -269,8 +269,8 @@ class Block_Controller(object):
             score = score - absDy * 1.0                # try to put block smoothly
 
         else:
-            score = score + fullLines * 20.0
-            score = score - nHoles * 1.0               # try not to make hole
+            score = score + fullLines * 10.0
+            score = score - nHoles * 5.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
             score = score - absDy * 1.0                # try to put block smoothly
         
