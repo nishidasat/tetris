@@ -225,22 +225,22 @@ class Block_Controller(object):
         for x in BlockMaxDy:
             absDy += abs(x)
 
-        #### maxDy
-        #maxDy = max(BlockMaxY) - min(BlockMaxY)
-        #### maxHeight
-        #maxHeight = max(BlockMaxY) - fullLines
+        ### maxDy
+        maxDy = max(BlockMaxY) - min(BlockMaxY)
+        ### maxHeight
+        maxHeight = max(BlockMaxY) - fullLines
 
-        ## statistical data
-        #### stdY
-        #if len(BlockMaxY) <= 0:
-        #    stdY = 0
-        #else:
-        #    stdY = math.sqrt(sum([y ** 2 for y in BlockMaxY]) / len(BlockMaxY) - (sum(BlockMaxY) / len(BlockMaxY)) ** 2)
-        #### stdDY
-        #if len(BlockMaxDy) <= 0:
-        #    stdDY = 0
-        #else:
-        #    stdDY = math.sqrt(sum([y ** 2 for y in BlockMaxDy]) / len(BlockMaxDy) - (sum(BlockMaxDy) / len(BlockMaxDy)) ** 2)
+        # statistical data
+        ### stdY
+        if len(BlockMaxY) <= 0:
+            stdY = 0
+        else:
+            stdY = math.sqrt(sum([y ** 2 for y in BlockMaxY]) / len(BlockMaxY) - (sum(BlockMaxY) / len(BlockMaxY)) ** 2)
+        ### stdDY
+        if len(BlockMaxDy) <= 0:
+            stdDY = 0
+        else:
+            stdDY = math.sqrt(sum([y ** 2 for y in BlockMaxDy]) / len(BlockMaxDy) - (sum(BlockMaxDy) / len(BlockMaxDy)) ** 2)
 
 
        # calc Evaluation Value *******************************************
@@ -268,12 +268,13 @@ class Block_Controller(object):
 
         #******************************************************************************** 
         
-        #score = score - maxDy * 0.3                # maxDy
-        #score = score - maxHeight * 5              # maxHeight
-        #score = score - stdY * 1.0                 # statistical data
-        #score = score - stdDY * 0.01               # statistical data
+        score = score - maxDy * 0.3                # maxDy
+        score = score - maxHeight * 5              # maxHeight
+        score = score - stdY * 1.0                 # statistical data
+        score = score - stdDY * 0.01               # statistical data
 
-        # print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY)
+         print('score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY')
+         print(score, fullLines, nHoles, nIsolatedBlocks, maxHeight, stdY, stdDY, absDy, BlockMaxY)
         return score
 
 
