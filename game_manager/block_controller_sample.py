@@ -225,10 +225,10 @@ class Block_Controller(object):
         for x in BlockMaxDy:
             absDy += abs(x)
 
-        ### maxDy
-        maxDy = max(BlockMaxY) - min(BlockMaxY)
-        ### maxHeight
-        maxHeight = max(BlockMaxY) - fullLines
+        #### maxDy
+        #maxDy = max(BlockMaxY) - min(BlockMaxY)
+        #### maxHeight
+        #maxHeight = max(BlockMaxY) - fullLines
 
         ## statistical data
         #### stdY
@@ -265,16 +265,16 @@ class Block_Controller(object):
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
-
-        #******************************************************************************** 
         
-        score = score - maxDy * 0.3                # maxDy
-        score = score - maxHeight * 5              # maxHeight
+        #********************************************************************************
+        #score = score - maxDy * 0.3                # maxDy
+        #score = score - maxHeight * 1              # maxHeight 
         #score = score - stdY * 1.0                 # statistical data
         #score = score - stdDY * 0.01               # statistical data
 
-        print("score, fullLines, nHoles, nIsolatedBlocks, maxDy, maxHeight, absDy, BlockMaxY")
-        print(score, fullLines, nHoles, nIsolatedBlocks, maxDy, maxHeight, absDy, BlockMaxY)
+
+        print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
+        print(score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY)
         return score
 
 
