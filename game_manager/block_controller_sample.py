@@ -258,7 +258,7 @@ class Block_Controller(object):
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
-                score = score - fullLines * 20.0           # try to delete line
+                score = score - fullLines * 25.0           # try to delete line
         else:
             score = score + fullLines * 10.0           # try to delete line
        
