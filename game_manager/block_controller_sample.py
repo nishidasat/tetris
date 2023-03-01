@@ -255,17 +255,13 @@ class Block_Controller(object):
         
         if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):
             score = score + fullLines * 20.0           # try to delete line
-        else:
-            score = score + fullLines * 10.0           # try to delete line
-
-        if emergency == 0:   # NOT EMERGENCY
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 20.0           # try to delete line
-        #else:    # EMERGENCY
-            #score = score - absDy * 10.0                # try to put block smoothly
-        
+        else:
+            score = score + fullLines * 10.0           # try to delete line
+       
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.0      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
