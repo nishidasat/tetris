@@ -245,13 +245,14 @@ class Block_Controller(object):
 
        # calc Evaluation Value
         score = 0
-        yabai = 0
+        emergency = 0
         for xx in range(2, 8, +1):
              if board[15 * self.board_data_width + xx] != 0:
-                yabai = 1
+                emergency = 1
+                print('///////emergency: %d' % emergency) 
                 break
         
-        if yabai == 0:
+        if emergency == 0:
             #if (CurrentShape_index >= 1) and (CurrentShape_index <= 3):
             if (CurrentShape_index >= 1) and (CurrentShape_index <= 1):
                 score = score + fullLines * 10.0           # try to delete line
