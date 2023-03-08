@@ -277,7 +277,7 @@ class Block_Controller(object):
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
-        print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy))
+        print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
         print('BlockMaxY=' + str(BlockMaxY))
         return score
 
