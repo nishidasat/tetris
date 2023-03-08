@@ -228,8 +228,8 @@ class Block_Controller(object):
 
         #### maxDy
         #maxDy = max(BlockMaxY) - min(BlockMaxY)
-        #### maxHeight
-        #maxHeight = max(BlockMaxY) - fullLines
+        ### maxHeight
+        maxHeight = max(BlockMaxY) - fullLines
 
         ## statistical data
         #### stdY
@@ -271,7 +271,7 @@ class Block_Controller(object):
         
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
-        #score = score - maxHeight * 1              # maxHeight 
+        score = score - maxHeight * 0.01              # maxHeight 
         #score = score - stdY * 1.0                 # statistical data
         #score = score - stdDY * 0.01               # statistical data
 
