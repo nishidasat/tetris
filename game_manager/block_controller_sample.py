@@ -273,7 +273,7 @@ class Block_Controller(object):
         #score = score - maxDy * 0.3                # maxDy
         score = score - maxHeight * 0.01              # maxHeight 
         #score = score - stdY * 1.0                 # statistical data
-        #score = score - stdDY * 0.01               # statistical data
+        #score = score - stdDY * 0.001               # statistical data
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
