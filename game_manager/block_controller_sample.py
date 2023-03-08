@@ -263,7 +263,7 @@ class Block_Controller(object):
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
         else:   # IN EMERGENCY
-            score = score + fullLines * 10.0           # try to delete line
+            score = score + fullLines * 30.0           # try to delete line
             score = score - maxHeight * 1.0              # maxHeight 
        
         score = score - nHoles * 10.0               # try not to make hole
