@@ -264,7 +264,7 @@ class Block_Controller(object):
             score = score + fullLines * 10.0           # try to delete line
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
-            score = score - maxHeight * 5.0              # maxHeight 
+            score = score - maxHeight * 1.0              # maxHeight 
        
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
