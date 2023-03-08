@@ -72,7 +72,7 @@ class Block_Controller(object):
                 # evaluate board
                 EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index)
                 # update best move
-                if EvalValue >= LatestEvalValue:
+                if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
                 print('direction0=' + str(direction0) + '　x0=' + str(x0))
