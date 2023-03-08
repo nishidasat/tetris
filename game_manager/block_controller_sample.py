@@ -249,7 +249,7 @@ class Block_Controller(object):
         for xx in range(2, self.board_data_width - 2, +1):
              if board[7 * self.board_data_width + xx] != 0:
                 emergency = 1
-                print('///row7: %d' % board[7 * self.board_data_width + xx])
+                #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: %d' % emergency) 
                 break
         
@@ -276,7 +276,7 @@ class Block_Controller(object):
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
-        print(str(score) + 'fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy))
+        print(str(score) + 'x=' + str(x) + 'fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy))
         print('BlockMaxY=' + str(BlockMaxY))
         return score
 
