@@ -75,7 +75,8 @@ class Block_Controller(object):
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
-
+                print('direction0=' + str(direction0) + 'x0=' + str(x0))
+                    
                 ###test
                 ###for direction1 in NextShapeDirectionRange:
                 ###  x1Min, x1Max = self.getSearchXRange(self.NextShape_class, direction1)
@@ -276,7 +277,7 @@ class Block_Controller(object):
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
-        print(str(score) + ' x=' + str(x) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy))
+        print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy))
         print('BlockMaxY=' + str(BlockMaxY))
         return score
 
