@@ -68,9 +68,10 @@ class Block_Controller(object):
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
                 board = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
-
+                xxdy = board[1]
+                
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index)
+                EvalValue = self.calcEvaluationValueSample(board[0], CurrentShape_index, xxdy)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -131,7 +132,7 @@ class Block_Controller(object):
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
         _board = self.dropDown(board, Shape_class, direction, x)
-        return _board
+        return _board, dy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
@@ -162,7 +163,7 @@ class Block_Controller(object):
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
         return _board
 
-    def calcEvaluationValueSample(self, board, CurrentShape_index):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy):
         #
         # sample function of evaluate board.
         #
@@ -288,7 +289,7 @@ class Block_Controller(object):
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
         print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
-        print('BlockMaxY=' + str(BlockMaxY))
+        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
         return score
 
 
