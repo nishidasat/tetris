@@ -75,7 +75,7 @@ class Block_Controller(object):
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
-                elif (EvalValue == LatestEvalValue) and (x0 % 2 != 0): # only case of even number
+                elif (EvalValue == LatestEvalValue) and (x0 % 2 != 0) and (direction0 % 2 != 0): # only case of odd number
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
                 print('direction0=' + str(direction0) + '　x0=' + str(x0))
@@ -266,7 +266,7 @@ class Block_Controller(object):
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
             if fullLines == 1:
-                score = score - fullLines * 10.0           # try to delete line 
+                score = score - fullLines * 1.0           # try to delete line 
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             #score = score - maxHeight * 0.001              # maxHeight 
