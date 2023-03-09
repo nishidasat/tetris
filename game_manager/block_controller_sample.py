@@ -151,7 +151,7 @@ class Block_Controller(object):
                 dy = _yy
         # get new board
         _board = self.dropDownWithDy(board, Shape_class, direction, x, dy)
-        return _board
+        return _board, dy
 
     def dropDownWithDy(self, board, Shape_class, direction, x, dy):
         #
