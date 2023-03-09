@@ -75,7 +75,7 @@ class Block_Controller(object):
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
-                elif (EvalValue == LatestEvalValue) and (x0 % 2 == 0): # only case of even number
+                elif (EvalValue == LatestEvalValue) and (x0 % 2 != 0): # only case of even number
                     strategy = (direction0, x0, 1, 1)
                     LatestEvalValue = EvalValue
                 print('direction0=' + str(direction0) + '　x0=' + str(x0))
