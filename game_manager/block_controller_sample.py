@@ -250,12 +250,12 @@ class Block_Controller(object):
        # calc Evaluation Value *******************************************
         score = 0
         emergency = 0
-        for xx in range(2, self.board_data_width - 2, +1):
-             if board[0 * self.board_data_width + xx] != 0:
-                emergency = 1
-                #print('///row7: %d' % board[7 * self.board_data_width + xx])
-                print('///////emergency: %d' % emergency) 
-                break
+        #for xx in range(2, self.board_data_width - 2, +1):
+        #     if board[0 * self.board_data_width + xx] != 0:
+        #        emergency = 1
+        #        #print('///row7: %d' % board[7 * self.board_data_width + xx])
+        #        print('///////emergency: %d' % emergency) 
+        #        break
         
         if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
