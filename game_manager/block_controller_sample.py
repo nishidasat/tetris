@@ -264,17 +264,13 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
-            #elif fullLines == 3:
-            #    score = score + fullLines * 20.0           # try to delete line
-            #elif fullLines == 4:
-            #    score = score + fullLines * 30.0           # try to delete line
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
             #if fullLines == 1:
             #    score = score - fullLines * 1.0           # try to delete line 
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
-            score = score + xxdy * 10              # minHeight 
+            score = score + xxdy * 1              # minHeight 
             #score = score - maxHeight * 0.001              # maxHeight 
        
         score = score - nHoles * 10.0               # try not to make hole
