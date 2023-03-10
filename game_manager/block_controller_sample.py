@@ -252,9 +252,9 @@ class Block_Controller(object):
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
-             if board[5 * self.board_data_width + xx] != 0:
+             if board[7 * self.board_data_width + xx] != 0:
                 emergency = 1
-                #print('///row5: %d' % board[5 * self.board_data_width + xx])
+                #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: %d' % emergency) 
                 break
         
@@ -277,7 +277,7 @@ class Block_Controller(object):
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
         #score = score - maxHeight * 0.01              # maxHeight
-        score = score + xxdy * 0.001              # minHeight
+        #score = score + xxdy * 0.001              # minHeight
         
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
