@@ -281,7 +281,7 @@ class Block_Controller(object):
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
         score = score - absDy * 1.0                # try to put block smoothly
         #score = score - maxHeight * 0.01              # maxHeight
-        score = score + xxdy * 0.01              # minHeight
+        score = score + xxdy * 0.001              # minHeight
         
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
