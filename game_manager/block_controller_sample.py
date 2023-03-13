@@ -267,7 +267,7 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
-            #score = score - absDy * 1.0                # try to put block smoothly
+            score = score - absDy * 1.0                # try to put block smoothly
             #if fullLines == 1:
              #   score = score - fullLines * 5.0           # try to delete line 
         else:   # IN EMERGENCY
