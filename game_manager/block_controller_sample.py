@@ -71,7 +71,7 @@ class Block_Controller(object):
                 xxdy = self.board_data_height - xxdy
                 
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy,self.board_backboard)
+                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, self.board_backboard)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -163,7 +163,7 @@ class Block_Controller(object):
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
         return _board
 
-    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, self.board_backboard):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard):
         #
         # sample function of evaluate board.
         #
@@ -252,7 +252,7 @@ class Block_Controller(object):
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
-             if self.board_backboard[7 * self.board_data_width + xx] != 0:
+             if xxbackboard[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: ' + str(emergency) + ' self.board_data_width=' + str(self.board_data_width) + ' 7 * self.board_data_width + xx=' + str(7 * self.board_data_width + xx)) 
