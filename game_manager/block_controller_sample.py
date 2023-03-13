@@ -278,7 +278,7 @@ class Block_Controller(object):
        
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
-        score = score - xxdy * 0.1              # block_minHeight
+        score = score - xxdy * 1.0              # block_minHeight
         #score = score - maxHeight * 0.01              # maxHeight
 
         
