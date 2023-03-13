@@ -130,8 +130,8 @@ class Block_Controller(object):
         # copy backboard data to make new board.
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
-        _board, xxdy = self.dropDown(board, Shape_class, direction, x)
-        return _board, xxdy
+        _board, dy = self.dropDown(board, Shape_class, direction, x)
+        return _board, dy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
@@ -251,7 +251,7 @@ class Block_Controller(object):
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
-             if board[0][7 * self.board_data_width + xx] != 0:
+             if board[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: %d' % emergency) 
