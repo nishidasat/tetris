@@ -252,7 +252,7 @@ class Block_Controller(object):
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
-             if board[7 * self.board_data_width + xx] != 0:
+             if self.board_backboard[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: ' + str(emergency) + ' self.board_data_width=' + str(self.board_data_width) + ' 7 * self.board_data_width + xx=' + str(7 * self.board_data_width + xx)) 
