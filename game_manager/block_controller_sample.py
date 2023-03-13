@@ -67,11 +67,10 @@ class Block_Controller(object):
             x0Min, x0Max = self.getSearchXRange(self.CurrentShape_class, direction0)
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
-                board = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
-                xxdy = board[1]
+                board, xxdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
                 
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board[0], CurrentShape_index, xxdy)
+                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -131,8 +130,8 @@ class Block_Controller(object):
         # copy backboard data to make new board.
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
-        _board = self.dropDown(board, Shape_class, direction, x)
-        return _board
+        _board, xxdy = self.dropDown(board, Shape_class, direction, x)
+        return _board, xxdy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
