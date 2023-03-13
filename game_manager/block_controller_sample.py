@@ -68,6 +68,7 @@ class Block_Controller(object):
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
                 board, xxdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
+                xxdy = self.board_data_height - xxdy
                 
                 # evaluate board
                 EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy)
@@ -254,7 +255,7 @@ class Block_Controller(object):
              if board[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
-                print('///////emergency: %d' % emergency) 
+                print('///////emergency: ' + str(emergency) + ' self.board_data_width=' + str(self.board_data_width) + ' 7 * self.board_data_width + xx=' + str(7 * self.board_data_width + xx) 
                 break
         
         if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
@@ -272,12 +273,12 @@ class Block_Controller(object):
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             #score = score - absDy * 1.0                # try to put block smoothly
-            score = score + xxdy * 10.0                # block_minHeight 
+            score = score - xxdy * 10.0                # block_minHeight 
             score = score - maxHeight * 0.001              # maxHeight 
        
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
-        score = score + xxdy * 0.1              # block_minHeight
+        score = score - xxdy * 0.1              # block_minHeight
         #score = score - maxHeight * 0.01              # maxHeight
 
         
