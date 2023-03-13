@@ -255,7 +255,7 @@ class Block_Controller(object):
              if xxbackboard[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
-                print('///////emergency: ' + str(emergency) + ' self.board_data_width=' + str(self.board_data_width) + ' 7 * self.board_data_width + xx=' + str(7 * self.board_data_width + xx)) 
+                print('///////emergency: ' + str(emergency)) 
                 break
         
         if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
