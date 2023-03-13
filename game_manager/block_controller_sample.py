@@ -163,7 +163,7 @@ class Block_Controller(object):
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
         return _board
 
-    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy,self.board_backboard):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, self.board_backboard):
         #
         # sample function of evaluate board.
         #
