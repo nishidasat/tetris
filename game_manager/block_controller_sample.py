@@ -278,10 +278,10 @@ class Block_Controller(object):
             score = score + fullLines * 10.0           # try to delete line
             score = score - absDy * 1.0                # try to put block smoothly
             score = score - nHoles * 1.0               # try not to make hole
-            score = score - xxdy * 5.0                # block_minHeight 
+            score = score - xxdy * 2.0                # block_minHeight 
             #score = score - maxHeight * 0.001              # maxHeight 
        
-        score = score - nIsolatedBlocks * 2.0      # try not to make isolated block
+        score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
 
         #score = score - maxHeight * 0.01              # maxHeight
 
