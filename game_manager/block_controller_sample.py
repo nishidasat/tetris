@@ -252,9 +252,9 @@ class Block_Controller(object):
         score = 0
         emergency = 0
         for xx in range(2, self.board_data_width - 2, +1):
-             if xxbackboard[10 * self.board_data_width + xx] != 0:
+             if xxbackboard[7 * self.board_data_width + xx] != 0:
                 emergency = 1
-                #print('///row7: %d' % board[10 * self.board_data_width + xx])
+                #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: ' + str(emergency)) 
                 break
         
@@ -281,7 +281,7 @@ class Block_Controller(object):
        
         score = score - nHoles * 10.0               # try not to make hole
         score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
-        score = score - xxdy * 1.0              # block_minHeight
+        score = score + ((22 - xxdy) * 1.0)              # block_minHeight
         #score = score - maxHeight * 0.01              # maxHeight
 
         
@@ -292,8 +292,8 @@ class Block_Controller(object):
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
-        #print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
-        #print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
+        print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
+        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
         return score
 
 
