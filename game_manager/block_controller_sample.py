@@ -273,7 +273,10 @@ class Block_Controller(object):
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             score = score - absDy * 1.0                # try to put block smoothly
-            score = score - xxdy * 10.0                # block_minHeight 
+            if xxdy <= 3:
+                score = score + (10 - xxdy) * 100.0                # block_minHeight
+            else:
+                score = score - xxdy * 10.0                # block_minHeight 
             #score = score - maxHeight * 0.001              # maxHeight 
        
         score = score - nHoles * 10.0               # try not to make hole
