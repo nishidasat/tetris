@@ -262,6 +262,7 @@ class Block_Controller(object):
             score = score + fullLines * 10.0           # try to delete line
             score = score - absDy * 1.0                # try to put block smoothly
             score = score - nHoles * 10.0               # try not to make hole
+            score = score - xxdy * 1.0                # block_minHeight
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
@@ -270,20 +271,18 @@ class Block_Controller(object):
             score = score + fullLines * 10.0           # try to delete line
             score = score - absDy * 1.0                # try to put block smoothly
             score = score - nHoles * 10.0               # try not to make hole
+            score = score - xxdy * 1.0                # block_minHeight            
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line 
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             score = score - absDy * 1.0                # try to put block smoothly
             score = score - nHoles * 1.0               # try not to make hole
-            if xxdy <= 3:
-                score = score + (10 - xxdy) * 100.0                # block_minHeight
-            else:
-                score = score - xxdy * 10.0                # block_minHeight 
+            score = score - xxdy * 5.0                # block_minHeight 
             #score = score - maxHeight * 0.001              # maxHeight 
        
-        score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
-        score = score + ((22 - xxdy) * 1.0)              # block_minHeight
+        score = score - nIsolatedBlocks * 2.0      # try not to make isolated block
+
         #score = score - maxHeight * 0.01              # maxHeight
 
         
