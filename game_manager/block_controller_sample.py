@@ -260,32 +260,35 @@ class Block_Controller(object):
         
         if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
-            score = score - absDy * 0.5                # try to put block smoothly
             score = score - nHoles * 10.0               # try not to make hole
+            score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
+            score = score - absDy * 0.5                # try to put block smoothly
+            #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 1.0                # block_minHeight
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
-                score = score - fullLines * 25.0           # try to delete line
+                score = score - fullLines * 30.0           # try to delete line
+                
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
-            score = score - absDy * 0.5                # try to put block smoothly
             score = score - nHoles * 10.0               # try not to make hole
-            score = score - xxdy * 1.0                # block_minHeight            
+            score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
+            score = score - absDy * 0.5                # try to put block smoothly
+            #score = score - maxHeight * 0.01              # maxHeigh
+            score = score - xxdy * 1.0                # block_minHeight
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line 
+                
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
-            score = score - absDy * 0.5                # try to put block smoothly
             score = score - nHoles * 10.0               # try not to make hole
-            score = score - xxdy * 5.0                # block_minHeight 
-            #score = score - maxHeight * 0.001              # maxHeight 
+            score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
+            score = score - absDy * 0.5                # try to put block smoothly
+            #score = score - maxHeight * 0.01              # maxHeigh
+            score = score - xxdy * 1.0                # block_minHeight
+            
        
-        score = score - nIsolatedBlocks * 1.5      # try not to make isolated block
-
-        #score = score - maxHeight * 0.01              # maxHeight
-
-        
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
         #score = score - stdY * 1.0                 # statistical data
