@@ -81,8 +81,8 @@ class Block_Controller(object):
                 #    LatestEvalValue = EvalValue
                 print('direction0=' + str(direction0) + '　x0=' + str(x0) + '@@@@@@@@@@@@@')
                 #xxcoordArray = self.Currentshape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, y.
-                xxcoordArray = Shape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, 
-                print('xxcoordArray=' + str(xxcoordArray))    
+                #xxcoordArray = Shape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, 
+                #print('xxcoordArray=' + str(xxcoordArray))    
                 
                 ###test
                 ###for direction1 in NextShapeDirectionRange:
@@ -165,7 +165,7 @@ class Block_Controller(object):
         for _x, _y in coordArray:
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
         return _board
-
+　　　　print('coordArray=' + str(coordArray))
     def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard):
         #
         # sample function of evaluate board.
