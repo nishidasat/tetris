@@ -262,7 +262,7 @@ class Block_Controller(object):
                 print('///////emergency: ' + str(emergency)) 
                 break
         
-        if ((CurrentShape_index >= 1) and (CurrentShape_index <= 3)) and (emergency == 0):  # NOT IN EMERGENCY
+        if CurrentShape_index == 1:  # NOT IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
@@ -273,6 +273,18 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
+                
+         elif ((CurrentShape_index >= 2) and (CurrentShape_index <= 3)) and (emergency == 0): 
+            score = score + fullLines * 10.0           # try to delete line
+            score = score - nHoles * 10.0               # try not to make hole
+            score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
+            score = score - absDy * 1.5                # try to put block smoothly
+            #score = score - maxHeight * 0.01              # maxHeigh
+            score = score - xxdy * 0.01                # block_minHeight
+            if fullLines == 1:
+                score = score - fullLines * 30.0           # try to delete line 
+            elif fullLines == 2:
+                score = score - fullLines * 10.0           # try to delete line
                 
         elif (CurrentShape_index >= 4) and (emergency == 0):
             score = score + fullLines * 10.0           # try to delete line
