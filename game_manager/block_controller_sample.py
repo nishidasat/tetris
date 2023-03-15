@@ -80,7 +80,7 @@ class Block_Controller(object):
                 #    strategy = (direction0, x0, 1, 1)
                 #    LatestEvalValue = EvalValue
                 print('direction0=' + str(direction0) + '　x0=' + str(x0) + '@@@@@@@@@@@@@')
-                xxcoordArray = Currenrshape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, y.
+                xxcoordArray = self.Currentshape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, y.
                 print('xxcoordArray=' + str(xxcoordArray))    
                 
                 ###test
