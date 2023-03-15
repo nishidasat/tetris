@@ -79,7 +79,7 @@ class Block_Controller(object):
                 #elif (EvalValue == LatestEvalValue) and (x0 % 2 != 0) and (direction0 % 2 != 0): # only case of odd number
                 #    strategy = (direction0, x0, 1, 1)
                 #    LatestEvalValue = EvalValue
-                print('direction0=' + str(direction0) + '　x0=' + str(x0) + '@@@@@@@@@@@@@')
+                print('direction0=' + str(direction0) + '　x0=' + str(x0) + '---------------------------')
                 #xxcoordArray = self.Currentshape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, y.
                 #xxcoordArray = Shape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, 
                 #print('xxcoordArray=' + str(xxcoordArray))    
@@ -280,7 +280,7 @@ class Block_Controller(object):
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
             score = score - absDy * 0.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
-            score = score - xxdy * 1.0                # block_minHeight
+            score = score - xxdy * 15.0                # block_minHeight
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line 
                 
