@@ -162,9 +162,9 @@ class Block_Controller(object):
         #
         _board = board
         coordArray = self.getShapeCoordArray(Shape_class, direction, x, 0)
+        print('coordArray=' + str(coordArray))
         for _x, _y in coordArray:
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
-        print('coordArray=' + str(coordArray))
         return _board　　　　
     def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard):
         #
