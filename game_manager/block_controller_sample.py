@@ -71,7 +71,7 @@ class Block_Controller(object):
                 xxdy = self.board_data_height - xxdy
                 
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, self.board_backboard)
+                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, self.board_backboard, direction0, x0)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -167,7 +167,7 @@ class Block_Controller(object):
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
         return _board
     
-    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard, direction0, x0):
         #
         # sample function of evaluate board.
         #
@@ -277,6 +277,8 @@ class Block_Controller(object):
                 score = score + fullLines * 1000.0           # try to delete line 
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line
+            if (direction0 == 0) and ((x0 == 0) or (x0 == 9):
+                score = score + 10                       
                 
         elif ((CurrentShape_index >= 2) and (CurrentShape_index <= 3)) and (emergency == 0): 
             score = score + fullLines * 10.0           # try to delete line
@@ -315,7 +317,8 @@ class Block_Controller(object):
                 score = score + fullLines * 1000.0           # try to delete line 
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line 
-            
+            if (CurrentShape_index == 1) and (direction0 == 0) and ((x0 == 0) or (x0 == 9):
+                score = score + 10             
        
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
