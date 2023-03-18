@@ -274,7 +274,7 @@ class Block_Controller(object):
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
             elif fullLines == 3:
-                score = score + fullLines * 1000.0           # try to delete line 
+                score = score + fullLines * 900.0           # try to delete line 
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line
             #if (direction0 == 0) and ((x0 == 0) or (x0 == 9)):
@@ -314,7 +314,7 @@ class Block_Controller(object):
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line
             elif fullLines == 3:
-                score = score + fullLines * 1000.0           # try to delete line 
+                score = score + fullLines * 900.0           # try to delete line 
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line 
             #if (CurrentShape_index == 1) and (direction0 == 0) and ((x0 == 0) or (x0 == 9)):
