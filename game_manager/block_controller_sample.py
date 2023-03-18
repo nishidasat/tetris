@@ -310,15 +310,19 @@ class Block_Controller(object):
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
             score = score - absDy * 1.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
-            score = score - xxdy * 0.05                # block_minHeight 0.01
+            score = score - xxdy * 1.00                # block_minHeight 0.01
             if fullLines == 1:
                 score = score - fullLines * 0.0           # try to delete line 5
             elif fullLines == 3:
                 score = score + fullLines * 1000.0           # try to delete line 
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line 
-            #if (CurrentShape_index == 1) and (direction0 == 0) and ((x0 == 0) or (x0 == 9)):
-            #    score = score + 1             
+            if xxdy <= 10:
+                score = score + 100
+            elif xxdy <= 5:
+                score = score + 200
+            elif xxdy <= 1:
+                score = score + 300
        
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
