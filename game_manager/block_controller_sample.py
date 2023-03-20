@@ -68,8 +68,8 @@ class Block_Controller(object):
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
                 board, xxdy, zzdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
-                xxdy = self.board_data_height - xxdy
-                zzdy = self.board_data_height - zzdy
+                xxdy = self.board_data_height -1 - xxdy
+                zzdy = self.board_data_height -1 - zzdy
                 
                 # evaluate board
                 EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, zzdy, self.board_backboard, direction0, x0)
@@ -338,7 +338,9 @@ class Block_Controller(object):
             elif fullLines == 3:
                 score = score + fullLines * 1000.0           # try to delete line
             elif fullLines == 4:
-                score = score + fullLines * 1000.0           # try to delete line 
+                score = score + fullLines * 1000.0           # try to delete line
+            if xxdy <= 10:
+                score = score + (22 - xxdy) * 100.0           # try to delete line
             
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
