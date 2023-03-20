@@ -67,11 +67,12 @@ class Block_Controller(object):
             x0Min, x0Max = self.getSearchXRange(self.CurrentShape_class, direction0)
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
-                board, xxdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
+                board, xxdy, zzdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
                 xxdy = self.board_data_height - xxdy
+                zzdy = self.board_data_height - zzdy
                 
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, self.board_backboard, direction0, x0)
+                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, zzdy, self.board_backboard, direction0, x0)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -134,8 +135,8 @@ class Block_Controller(object):
         # copy backboard data to make new board.
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
-        _board, xxdy = self.dropDown(board, Shape_class, direction, x)
-        return _board, xxdy
+        _board, xxdy, zzdy = self.dropDown(board, Shape_class, direction, x)
+        return _board, xxdy, zzdy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
@@ -154,7 +155,8 @@ class Block_Controller(object):
                 dy = _yy
         # get new board
         _board, xxdy = self.dropDownWithDy(board, Shape_class, direction, x, dy)
-        return _board, xxdy
+        zzdy = dy
+        return _board, xxdy, zzdy
 
     def dropDownWithDy(self, board, Shape_class, direction, x, dy):
         #
@@ -168,7 +170,7 @@ class Block_Controller(object):
         xxdy = _y + dy
         return _board, xxdy
     
-    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard, direction0, x0):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, zzdy, xxbackboard, direction0, x0):
         #
         # sample function of evaluate board.
         #
@@ -346,7 +348,7 @@ class Block_Controller(object):
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
         print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
-        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
+        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy)  + ' zzdy=' + str(zzdy) )
         return score
 
 
