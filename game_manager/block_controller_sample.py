@@ -134,8 +134,8 @@ class Block_Controller(object):
         # copy backboard data to make new board.
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
-        _board, dy = self.dropDown(board, Shape_class, direction, x)
-        return _board, dy
+        _board, xxdy = self.dropDown(board, Shape_class, direction, x)
+        return _board, xxdy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
@@ -153,8 +153,8 @@ class Block_Controller(object):
             if _yy < dy:
                 dy = _yy
         # get new board
-        _board = self.dropDownWithDy(board, Shape_class, direction, x, dy)
-        return _board, dy
+        _board, xxdy = self.dropDownWithDy(board, Shape_class, direction, x, dy)
+        return _board, xxdy
 
     def dropDownWithDy(self, board, Shape_class, direction, x, dy):
         #
@@ -165,7 +165,8 @@ class Block_Controller(object):
         #print('coordArray=' + str(coordArray))
         for _x, _y in coordArray:
             _board[(_y + dy) * self.board_data_width + _x] = Shape_class.shape
-        return _board
+        xxdy = _y + dy
+        return _board, xxdy
     
     def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard, direction0, x0):
         #
