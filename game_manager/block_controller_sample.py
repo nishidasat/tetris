@@ -342,7 +342,7 @@ class Block_Controller(object):
             if xxdy <= 10:
                 score = score + (22 - xxdy) * 100.0           # try to delete line
             elif xxdy >= 20:
-                score = score - xdy * 1000.0           # try to delete line
+                score = score - xxdy * 1000.0           # try to delete line
             
         #********************************************************************************
         #score = score - maxDy * 0.3                # maxDy
