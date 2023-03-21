@@ -168,7 +168,7 @@ class Block_Controller(object):
         xxdy = _y + dy
         return _board, xxdy
     
-    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, zzdy, xxbackboard, direction0, x0):
+    def calcEvaluationValueSample(self, board, CurrentShape_index, xxdy, xxbackboard, direction0, x0):
         #
         # sample function of evaluate board.
         #
@@ -362,7 +362,7 @@ class Block_Controller(object):
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
         print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
-        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy)  + ' zzdy=' + str(zzdy) )
+        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
         return score
 
 
