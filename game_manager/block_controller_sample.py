@@ -310,7 +310,7 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight 0.01
             if fullLines == 1:
-                score = score - fullLines * 100.0           # try to delete line 
+                score = score - fullLines * 20.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 20.0           # try to delete line
             
