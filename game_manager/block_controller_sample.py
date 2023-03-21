@@ -69,10 +69,9 @@ class Block_Controller(object):
                 # get board data, as if dropdown block
                 board, xxdy, zzdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
                 xxdy = self.board_data_height -1 - xxdy
-                zzdy = self.board_data_height -1 - zzdy
                 
                 # evaluate board
-                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, zzdy, self.board_backboard, direction0, x0)
+                EvalValue = self.calcEvaluationValueSample(board, CurrentShape_index, xxdy, self.board_backboard, direction0, x0)
                 # update best move
                 if EvalValue > LatestEvalValue:
                     strategy = (direction0, x0, 1, 1)
@@ -135,8 +134,8 @@ class Block_Controller(object):
         # copy backboard data to make new board.
         # if not, original backboard data will be updated later.
         board = copy.deepcopy(board_backboard)
-        _board, xxdy, zzdy = self.dropDown(board, Shape_class, direction, x)
-        return _board, xxdy, zzdy
+        _board, xxdy = self.dropDown(board, Shape_class, direction, x)
+        return _board, xxdy
 
     def dropDown(self, board, Shape_class, direction, x):
         # 
@@ -154,9 +153,8 @@ class Block_Controller(object):
             if _yy < dy:
                 dy = _yy
         # get new board
-        _board, xxdy = self.dropDownWithDy(board, Shape_class, direction, x, dy)
-        zzdy = dy
-        return _board, xxdy, zzdy
+        _board, xxdy = self.dropDownWithDy(board, Shape_class, direction, x, dy)    
+        return _board, xxdy
 
     def dropDownWithDy(self, board, Shape_class, direction, x, dy):
         #
@@ -303,8 +301,20 @@ class Block_Controller(object):
                 score = score - fullLines * 20.0           # try to delete line
             #elif fullLines == 3:
             #    score = score + fullLines * 10.0           # try to delete line 1000
-                
-        elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 0):   # In safe
+            
+        elif ((CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0): 
+            score = score + fullLines * 10.0           # try to delete line
+            score = score - nHoles * 10.0               # try not to make hole
+            score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
+            score = score - absDy * 1.5                # try to put block smoothly
+            #score = score - maxHeight * 0.01              # maxHeigh
+            score = score - xxdy * 0.01                # block_minHeight 0.01
+            if fullLines == 1:
+                score = score - fullLines * 100.0           # try to delete line 
+            elif fullLines == 2:
+                score = score - fullLines * 20.0           # try to delete line
+            
+        elif (CurrentShape_index >= 5) and (emergency == 0) and (unsafe == 0):   # In safe
             #score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
@@ -312,11 +322,11 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight
             if fullLines == 1:
-                score = score - fullLines * 20.0           # try to delete line
+                score = score - fullLines * 15.0           # try to delete line
             elif fullLines == 2:
                 score = score - fullLines * 5.0           # try to delete line
 
-        elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 1):   # In unsafe
+        elif (CurrentShape_index >= 5) and (emergency == 0) and (unsafe == 1):   # In unsafe
             score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
@@ -324,7 +334,7 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.05              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight
             if fullLines == 1:
-                score = score - fullLines * 20.0           # try to delete line
+                score = score - fullLines * 15.0           # try to delete line
 
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
