@@ -310,11 +310,11 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight 0.01
             if fullLines == 1:
-                score = score - fullLines * 20.0           # try to delete line 
+                score = score - fullLines * 40.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 20.0           # try to delete line
             
-        elif (CurrentShape_index >= 5) and (emergency == 0) and (unsafe == 0):   # In safe
+        elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 0):   # In safe
             #score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
@@ -326,7 +326,7 @@ class Block_Controller(object):
             elif fullLines == 2:
                 score = score - fullLines * 5.0           # try to delete line
 
-        elif (CurrentShape_index >= 5) and (emergency == 0) and (unsafe == 1):   # In unsafe
+        elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 1):   # In unsafe
             score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
