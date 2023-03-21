@@ -302,7 +302,7 @@ class Block_Controller(object):
             #elif fullLines == 3:
             #    score = score + fullLines * 10.0           # try to delete line 1000
             
-        elif ((CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0): 
+        elif (CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0): 
             score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
