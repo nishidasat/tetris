@@ -67,7 +67,7 @@ class Block_Controller(object):
             x0Min, x0Max = self.getSearchXRange(self.CurrentShape_class, direction0)
             for x0 in range(x0Min, x0Max):
                 # get board data, as if dropdown block
-                board, xxdy, zzdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
+                board, xxdy = self.getBoard(self.board_backboard, self.CurrentShape_class, direction0, x0)
                 xxdy = self.board_data_height -1 - xxdy
                 
                 # evaluate board
