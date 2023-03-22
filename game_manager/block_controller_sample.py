@@ -331,16 +331,16 @@ class Block_Controller(object):
             score = score - absDy * 1.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01             # block_minHeight 0.01
-            if fullLines == 1:
-                score = score - fullLines * 5.0           # try to delete line
-            elif fullLines == 3:
-                score = score + fullLines * 1000.0           # try to delete line
-            elif fullLines == 4:
-                score = score + fullLines * 1000.0           # try to delete line
+            #if fullLines == 1:
+            #    score = score - fullLines * 5.0           # try to delete line
+            #elif fullLines == 3:
+            #    score = score + fullLines * 1000.0           # try to delete line
+            #elif fullLines == 4:
+            #    score = score + fullLines * 1000.0           # try to delete line
             #if xxdy <= 10:
             #    score = score + (22 - xxdy) * 100.0           # try to delete line
-            if xxdy >= 18:
-                score = score - xxdy * 1000.0           # try to delete line
+            #if xxdy >= 18:
+            #    score = score - xxdy * 1000.0           # try to delete line
                 
         #if (CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0): 
         #    if fullLines == 1:
