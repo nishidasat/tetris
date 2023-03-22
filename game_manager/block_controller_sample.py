@@ -281,10 +281,10 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
-            elif fullLines == 3:
-                score = score + fullLines * 1000.0           # try to delete line 
-            elif fullLines == 4:
-                score = score + fullLines * 1000.0           # try to delete line
+            #elif fullLines == 3:
+            #    score = score + fullLines * 1000.0           # try to delete line 
+            #elif fullLines == 4:
+            #    score = score + fullLines * 1000.0           # try to delete line
             #if (direction0 == 0) and ((x0 == 0) or (x0 == 9)):
             #    score = score + 1                       
         
