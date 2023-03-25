@@ -328,17 +328,17 @@ class Block_Controller(object):
             score = score + fullLines * 10.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
-            score = score - absDy * 0.5                # try to put block smoothly
+            score = score - absDy * 0.01                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
-            score = score - xxdy * 1             # block_minHeight 0.01
+            score = score - xxdy * 0.01             # block_minHeight 0.01
             #if fullLines == 1:
             #    score = score - fullLines * 5.0           # try to delete line
             #elif fullLines == 3:
             #    score = score + fullLines * 1000.0           # try to delete line
             #elif fullLines == 4:
             #    score = score + fullLines * 1000.0           # try to delete line
-            #if xxdy <= 12:
-            #    score = score + (22 - xxdy) * 100.0           # try to delete line
+            if xxdy <= 12:
+                score = score + (22 - xxdy) * 100.0           # try to delete line
             #if xxdy >= 19:
             #    score = score - xxdy * 1000.0           # try to delete line
                 
