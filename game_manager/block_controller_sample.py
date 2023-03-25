@@ -320,14 +320,14 @@ class Block_Controller(object):
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
             score = score - absDy * 1.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
-            score = score - xxdy * 0.05                # block_minHeight
+            score = score - xxdy * 0.01                # block_minHeight 0.05
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line
             #elif fullLines == 2:
             #    score = score - fullLines * 2.0           # try to delete line
 
         else:   # IN EMERGENCY
-            score = score + fullLines * 17.5           # try to delete line
+            score = score + fullLines * 15.0           # try to delete line
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
             score = score - absDy * 1.5                # try to put block smoothly
