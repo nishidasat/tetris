@@ -340,7 +340,7 @@ class Block_Controller(object):
             #elif fullLines == 4:
             #    score = score + fullLines * 1000.0           # try to delete line
             if xxdy <= 12:
-                score = score - xxdy * 1.0           # try to delete line
+                score = score - xxdy * 5.0           # try to delete line
             #if xxdy >= 19:
             #    score = score - xxdy * 1000.0           # try to delete line
                 
