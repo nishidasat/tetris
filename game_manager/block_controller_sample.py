@@ -322,7 +322,7 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.05                # block_minHeight
             if fullLines == 1:
-                score = score - fullLines * 8.5           # try to delete line
+                score = score - fullLines * 5.0           # try to delete line
             #elif fullLines == 2:
             #    score = score - fullLines * 2.0           # try to delete line
 
@@ -340,7 +340,7 @@ class Block_Controller(object):
             #elif fullLines == 4:
             #    score = score + fullLines * 1000.0           # try to delete line
             if xxdy <= 17:
-                score = score + (22 - xxdy) * 10.0           # try to delete line
+                score = score + (22 - xxdy) * 5.0           # try to delete line
             #if xxdy >= 19:
             #    score = score - xxdy * 1000.0           # try to delete line
                 
