@@ -322,7 +322,7 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight
             if fullLines == 1:
-                score = score - fullLines * 5.0           # try to delete line
+                score = score - fullLines * 6.0           # try to delete line
 
         else:   # IN EMERGENCY
             score = score + fullLines * 10.0           # try to delete line
@@ -342,8 +342,8 @@ class Block_Controller(object):
             #if xxdy >= 19:
             #    score = score - xxdy * 1000.0           # try to delete line
                 
-        if (CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0) and (fullLines == 1): 
-            score = score - fullLines * 5.0           # try to delete line 
+        #if (CurrentShape_index == 4) and ((direction0 == 0) or (direction0 == 2)) and (emergency == 0) and (fullLines == 1): 
+        #    score = score - fullLines * 5.0           # try to delete line 
             #elif fullLines == 2:
             #    score = score - fullLines * 20.0           # try to delete line            
         #********************************************************************************
