@@ -279,6 +279,10 @@ class Block_Controller(object):
             score = score - xxdy * 0.01                # block_minHeight 0.01
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
+            elif (nHoles <= 5) and (fullLines == 2):
+                score = score - fullLines * 30.0           # try to delete line 1000
+            elif (nHoles >= 6) and (fullLines == 3):
+                score = score + fullLines * 10.0           # try to delete line 1000
             elif fullLines == 2:
                 score = score - fullLines * 30.0           # try to delete line
             elif fullLines == 3:
@@ -299,7 +303,9 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line 
             elif fullLines == 2:
                 score = score - fullLines * 20.0           # try to delete line
-            elif fullLines == 3:
+            elif (nHoles <= 5) and (fullLines == 3):
+                score = score - fullLines * 10.0           # try to delete line 1000
+            elif (nHoles >= 6) and (fullLines == 3):
                 score = score + fullLines * 10.0           # try to delete line 1000
                      
         #elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 1): # In safe
@@ -323,9 +329,9 @@ class Block_Controller(object):
             score = score - xxdy * 0.01                # block_minHeight 0.05
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line
-            #elif fullLines == 2:
-            #    score = score - fullLines * 2.0           # try to delete line
-
+            elif (nHoles <= 5) and fullLines == 2:
+                score = score - fullLines * 2.0           # try to delete line
+                
         else:   # IN EMERGENCY
             score = score + fullLines * 13.0           # try to delete line ******
             score = score - nHoles * 10.0               # try not to make hole
