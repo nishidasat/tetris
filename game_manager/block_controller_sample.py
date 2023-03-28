@@ -258,7 +258,7 @@ class Block_Controller(object):
         emergency = 0
         #unsafe = 0
         for xx in range(2, self.board_data_width - 2, +1):
-            if xxbackboard[8 * self.board_data_width + xx] != 0:
+            if xxbackboard[7 * self.board_data_width + xx] != 0:
                 emergency = 1
                 #print('///row7: %d' % board[7 * self.board_data_width + xx])
                 print('///////emergency: ' + str(emergency)) 
@@ -280,7 +280,7 @@ class Block_Controller(object):
             if fullLines == 1:
                 score = score - fullLines * 30.0           # try to delete line 
             elif (nHoles <= 4) and (fullLines == 2):
-                score = score - fullLines * 10.0           # try to delete line 1000
+                score = score - fullLines * 30.0           # try to delete line 1000
             elif (nHoles >= 5) and (fullLines == 2):
                 score = score + fullLines * 10.0           # try to delete line 1000
             elif fullLines == 3:
@@ -304,7 +304,7 @@ class Block_Controller(object):
             elif (nHoles <= 4) and (fullLines == 3):
                 score = score - fullLines * 5.0           # try to delete line 1000
             elif (nHoles >= 5) and (fullLines == 3):
-                score = score + fullLines * 10.0           # try to delete line 1000
+                score = score + fullLines * 30.0           # try to delete line 1000
                      
         #elif (CurrentShape_index >= 4) and (emergency == 0) and (unsafe == 1): # In safe
         #    #score = score + fullLines * 10.0           # try to delete line
@@ -328,10 +328,10 @@ class Block_Controller(object):
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line 5
             elif (nHoles <= 4) and fullLines == 2:
-                score = score - fullLines * 2.0           # try to delete line 5
+                score = score - fullLines * 1.0           # try to delete line 5
                 
         else:   # IN EMERGENCY
-            score = score + fullLines * 13.0           # try to delete line ******
+            score = score + fullLines * 10.0           # try to delete line ******
             score = score - nHoles * 10.0               # try not to make hole
             score = score - nIsolatedBlocks * 1.5      # try not to make isolated bloc
             score = score - absDy * 1.5                # try to put block smoothly
