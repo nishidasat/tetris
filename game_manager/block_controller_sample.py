@@ -302,7 +302,7 @@ class Block_Controller(object):
             elif fullLines == 2:
                 score = score - fullLines * 20.0           # try to delete line
             elif (nHoles <= 4) and (fullLines == 3):
-                score = score - fullLines * 10.0           # try to delete line 1000
+                score = score - fullLines * 5.0           # try to delete line 1000
             elif (nHoles >= 5) and (fullLines == 3):
                 score = score + fullLines * 10.0           # try to delete line 1000
                      
@@ -328,7 +328,7 @@ class Block_Controller(object):
             if fullLines == 1:
                 score = score - fullLines * 5.0           # try to delete line 5
             elif (nHoles <= 4) and fullLines == 2:
-                score = score - fullLines * 3.0           # try to delete line 5
+                score = score - fullLines * 2.0           # try to delete line 5
                 
         else:   # IN EMERGENCY
             score = score + fullLines * 13.0           # try to delete line ******
