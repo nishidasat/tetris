@@ -285,11 +285,11 @@ class Block_Controller(object):
             score = score - absDy * 1.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight 0.01
-            if (fullLines == 1) and  ((nHoles <= 4) or (maxHeight <= 10)):
+            if (fullLines == 1) and  ((nHoles <= 4) or (maxHeight <= 8)):
                 score = score - fullLines * 30.0           # try to delete line 
-            elif (fullLines == 2) and  ((nHoles <= 4) or (maxHeight <= 10)):
+            elif (fullLines == 2) and  ((nHoles <= 4) or (maxHeight <= 8)):
                 score = score - fullLines * 20.0           # try to delete line
-            elif (fullLines == 3) and ((nHoles <= 4) or (maxHeight <= 10)):
+            elif (fullLines == 3) and ((nHoles <= 4) or (maxHeight <= 8)):
                 score = score - fullLines * 5.0           # try to delete line 1000
             elif (fullLines == 3):
                 score = score + fullLines * 30.0           # try to delete line 1000
