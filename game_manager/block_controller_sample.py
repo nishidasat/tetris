@@ -326,7 +326,7 @@ class Block_Controller(object):
             elif fullLines == 4:
                 score = score + fullLines * 1000.0           # try to delete line
             elif xxdy <= 17:
-                score = score + (22 - xxdy) * 1.0           # try to delete line *****
+                score = score + (22 - xxdy) * 10.0           # try to delete line *****
             elif xxdy >= 19:
                 score = score - xxdy * 1000.0           # try to delete line
                 
