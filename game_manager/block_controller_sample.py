@@ -290,13 +290,13 @@ class Block_Controller(object):
             score = score - absDy * 1.5                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.03                # block_minHeight 0.01
-            if (fullLines == 1) and  ((nHoles <= 5) or (maxHeight <= 5)):
+            if (fullLines == 1) and  ((nHoles <= 5) or (maxHeight <= 8)):
                 score = score - fullLines * 30.0           # try to delete line 
-            elif (fullLines == 2) and  ((nHoles <= 5) or (maxHeight <= 5)):
+            elif (fullLines == 2) and  ((nHoles <= 5) or (maxHeight <= 8)):
                 score = score - fullLines * 20.0           # try to delete line
-            elif (fullLines == 3) and ((nHoles <= 5) or (maxHeight <= 5)):
+            elif (fullLines == 3) and ((nHoles <= 5) or (maxHeight <= 8)):
                 score = score - fullLines * 5.0           # try to delete line 1000
-            elif (nHoles >= 5)  and ((nHoles >= 6) or (maxHeight >= 6)):
+            elif (nHoles >= 5)  and ((nHoles >= 6) or (maxHeight >= 9)):
                 score = score + fullLines * 30.0           # try to delete line 1000
                      
         elif (CurrentShape_index >= 4) and (emergency == 0):   #4~ NOT IN Emergency
