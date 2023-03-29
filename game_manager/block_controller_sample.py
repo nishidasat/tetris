@@ -301,11 +301,11 @@ class Block_Controller(object):
             score = score - absDy * 2.0                # try to put block smoothly
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.03                # block_minHeight 0.05
-            if (fullLines == 1) and ((nHoles <= 4) and (maxHeight <= 4)):
+            if (fullLines == 1) and ((nHoles <= 3) and (maxHeight <= 4)):
                 score = score - fullLines * 20.0           # try to delete line 5
             elif (fullLines == 1):
                 score = score - fullLines * 10.0           # try to delete line 5
-            elif (fullLines == 2) and ((nHoles <= 4) and (maxHeight <= 4)):
+            elif (fullLines == 2) and ((nHoles <= 3) and (maxHeight <= 4)):
                 score = score - fullLines * 20.0           # try to delete line 5
             elif (nHoles >= 6) or  (maxHeight >= 5):
                 score = score - xxdy * 0.1           # try to delete line 5
