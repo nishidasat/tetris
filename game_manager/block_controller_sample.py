@@ -271,8 +271,10 @@ class Block_Controller(object):
             score = score - xxdy * 0.01                # block_minHeight 0.01
             if (fullLines == 1)and ((nHoles <= 4) and (maxHeight <= 10)):
                 score = score - fullLines * 30.0           # try to delete line 
-            elif (fullLines == 2) and ((nHoles <= 4) and (maxHeight <= 10)):
+             elif (fullLines == 2) and ((nHoles <= 4) and (maxHeight <= 10)):
                 score = score - fullLines * 30.0           # try to delete line 1000
+            elif (fullLines == 2):
+                score = score + fullLines * 20.0           # try to delete line 1000
             elif fullLines == 3:
                 score = score + fullLines * 1000.0           # try to delete line 
             elif fullLines == 4:
@@ -289,6 +291,8 @@ class Block_Controller(object):
                 score = score - fullLines * 30.0           # try to delete line 
             elif (fullLines == 2) and  ((nHoles <= 4) or (maxHeight <= 8)):
                 score = score - fullLines * 20.0           # try to delete line
+            elif (fullLines == 2):
+                score = score + fullLines * 20.0           # try to delete line 1000
             elif (fullLines == 3) and ((nHoles <= 4) or (maxHeight <= 8)):
                 score = score - fullLines * 5.0           # try to delete line 1000
             elif (fullLines == 3):
