@@ -79,7 +79,7 @@ class Block_Controller(object):
                 #elif (EvalValue == LatestEvalValue) and (x0 % 2 != 0) and (direction0 % 2 != 0): # only case of odd number
                 #    strategy = (direction0, x0, 1, 1)
                 #    LatestEvalValue = EvalValue
-                print('direction0=' + str(direction0) + '　x0=' + str(x0) + '---------------------------')
+                #print('direction0=' + str(direction0) + '　x0=' + str(x0) + '---------------------------')
                 #xxcoordArray = self.Currentshape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, y.
                 #xxcoordArray = Shape_class.getCoords(direction0, x0, self.board_data_height - xxdy) # get array from shape direction, x, 
                 #print('xxcoordArray=' + str(xxcoordArray))    
@@ -306,7 +306,7 @@ class Block_Controller(object):
             #score = score - maxHeight * 0.01              # maxHeigh
             score = score - xxdy * 0.01                # block_minHeight 0.05
             if fullLines == 1:
-                score = score - fullLines * 5.2           # try to delete line 5
+                score = score - fullLines * 5.0           # try to delete line 5
                 #if (fullLines == 1) and ((nHoles <= 3) and (maxHeight <= 4)):
             #    score = score - fullLines * 5.0           # try to delete line 5
             #elif (fullLines == 1):
@@ -347,8 +347,8 @@ class Block_Controller(object):
 
 
         #print("score, fullLines, nHoles, nIsolatedBlocks, absDy, BlockMaxY")
-        print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
-        print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
+        #print(str(score) + ' fullLines=' + str(fullLines) + ' nHoles=' + str(nHoles) + ' nIsolatedBlocks=' + str(nIsolatedBlocks) + ' absDy=' + str(absDy) + ' maxHeight=' + str(maxHeight))
+        #print('BlockMaxY=' + str(BlockMaxY) + ' xxdy=' + str(xxdy) )
         return score
 
 
